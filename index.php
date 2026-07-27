@@ -14,28 +14,25 @@
         <nav class="mx-auto max-w-screen-lg flex justify-between py-4">
             <div class="font-extrabold text-xl tracking-wider">Book Wise</div>
             <ul class="flex space-x-4">
-                <li class="font-bold"><a href="/index.php">Explorar</a></li>
-                <li class="font-bold"><a href="/meus-livros.php">Meus Livros</a></li>
+                <li class="font-bold"><a href="/index.php" class="hover:underline">Explorar</a></li>
+                <li class="font-bold"><a href="/meus-livros.php" class="hover:underline">Meus Livros</a></li>
             </ul>
 
             <ul>
-                <li class="font-bold"><a href="/login.php">Fazer Login</a></li>
+                <li class="font-bold"><a href="/login.php" class="hover:underline">Fazer Login</a></li>
             </ul>
         </nav>
     </header>
 
-    <main class="mx-auto max-w-screen-lg font-serif">
+    <main class="mx-auto max-w-screen-lg font-serif space-y-6">
 
-        <h1 class="text-xl font-bold py-4">Lista de Livros</h1>
+        <h1 class="text-xl font-bold py-6 mt-4">Lista de Livros</h1>
 
-        <div>
-            <form action="" method="get">
-                <input type="text" name="pesquisa" id="pesquisa" class="border-2 border-stone-800 bg-stone-900 rounded-md" placeholder="Pesquise um livro...">
-                <button type="submit" class="bg-stone-400 border-2 border-stone-800 rounded-md text-stone-950 p-1">Pesquisar</button>
-            </form>
-        </div>
+        <form action="" method="get" class="w-full flex space-x-2">
+            <input type="text" name="pesquisa" id="pesquisa" class="border-2 border-stone-800 bg-stone-900 rounded-md text-sm focus:outline-none px-2 py-1 w-full" placeholder="Pesquise um livro...">
+            <button type="submit" class="bg-stone-400 border-2 border-stone-800 rounded-md text-stone-950 p-1">🔎</button>
+        </form>
         
-
     </main>
     
     <footer>
