@@ -18,7 +18,7 @@
                     <img src="<?= $value['imagem']; ?>" alt="Capa do livro <?= $value['titulo']; ?>">
                 </div>
                 <div>
-                    <p class="p-1"><a href="/livro.php?id=<?= $value['id']; ?>" class="font-semibold hover:underline"><?= $value['titulo']; ?></a></p>
+                    <p class="p-1"><a href="/livro?id=<?= $value['id']; ?>" class="font-semibold hover:underline"><?= $value['titulo']; ?></a></p>
                     <p class="p-1 text-xs italic"><?= $value['autor']; ?></p>
                     <p class="p-1 text-xs italic">⭐⭐⭐⭐⭐(3 Avaliações)</p>
                 </div>

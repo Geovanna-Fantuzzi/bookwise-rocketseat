@@ -17,7 +17,7 @@
         <nav class="mx-auto max-w-screen-lg flex justify-between py-4">
             <div class="font-extrabold text-xl tracking-wider">Book Wise</div>
             <ul class="flex space-x-4">
-                <li class="font-bold"><a href="/index.php" class="hover:underline">Explorar</a></li>
+                <li class="font-bold"><a href="/" class="hover:underline">Explorar</a></li>
                 <li class="font-bold"><a href="/meus-livros.php" class="hover:underline">Meus Livros</a></li>
             </ul>
 
