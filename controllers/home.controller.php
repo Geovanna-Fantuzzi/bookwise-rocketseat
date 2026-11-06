@@ -2,6 +2,10 @@
 
 require 'dados.php';
 
+$data = [
+    'livros' => $livros
+];
+
 $view = 'home';
 
-require 'views/template/app.php';
+view($view, $data);

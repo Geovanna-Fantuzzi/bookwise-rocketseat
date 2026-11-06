@@ -1,6 +1,12 @@
 <?php
 
-function dd(...$dump) {
+function view($view, $data = [])
+{
+    require "views/template/app.php";
+}
+
+function dd(...$dump)
+{
 
     echo '<pre>';
     var_dump($dump);
