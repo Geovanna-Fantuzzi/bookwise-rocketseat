@@ -8,5 +8,14 @@ function dd(...$dump) {
     if ($dump == false) {
         die();
     }
+}
 
+function abort($status)
+{
+
+    http_response_code($status);
+
+    view($status);
+
+    die();
 }
