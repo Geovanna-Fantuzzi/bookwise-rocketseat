@@ -30,7 +30,7 @@
     <!-- Corpo da página -->
     <main class="mx-auto max-w-screen-lg font-serif space-y-6 px-8  mb-4 lg:px-0">
 
-       <?php require "views/{$view}.view.php"; ?>
+       <?php require "views/{$view}.php"; ?>
 
     </main>
 
