@@ -18,11 +18,11 @@
             <div class="font-extrabold text-xl tracking-wider">Book Wise</div>
             <ul class="flex space-x-4">
                 <li class="font-bold"><a href="/" class="hover:underline">Explorar</a></li>
-                <li class="font-bold"><a href="/meus-livros.php" class="hover:underline">Meus Livros</a></li>
+                <li class="font-bold"><a href="/meus-livros" class="hover:underline">Meus Livros</a></li>
             </ul>
 
             <ul>
-                <li class="font-bold"><a href="/login.php" class="hover:underline">Fazer Login</a></li>
+                <li class="font-bold"><a href="/login" class="hover:underline">Fazer Login</a></li>
             </ul>
         </nav>
     </header>
