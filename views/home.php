@@ -12,22 +12,22 @@
     <!-- Loop de livros -->
     <?php 
     
-    foreach ($data['livros'] as $value) : ?>
+    foreach ($livros as $livro) : ?>
         <!-- Card Livro-->
         <div class="p-2 rounded border-stone-800 border-2 bg-stone-900">
             <div class="flex">
                 <div class="w-1/3 px-3">
-                    <img src="<?= $value['imagem']; ?>" alt="Capa do livro <?= $value['titulo']; ?>">
+                    <img src="<?= $livro->imagem; ?>" alt="Capa do livro <?= $livro->titulo; ?>">
                 </div>
                 <div>
-                    <p class="p-1"><a href="/livro?id=<?= $value['id']; ?>" class="font-semibold hover:underline"><?= $value['titulo']; ?></a></p>
-                    <p class="p-1 text-xs italic"><?= $value['autor']; ?></p>
+                    <p class="p-1"><a href="/livro?id=<?= $livro->id; ?>" class="font-semibold hover:underline"><?= $livro->titulo; ?></a></p>
+                    <p class="p-1 text-xs italic"><?= $livro->autor; ?></p>
                     <p class="p-1 text-xs italic">⭐⭐⭐⭐⭐(3 Avaliações)</p>
                 </div>
 
             </div>
             <div class="p-3">
-                <p class="text-sm line-clamp-3"><?= $value['descricao']; ?></p>
+                <p class="text-sm line-clamp-3"><?= $livro->descricao; ?></p>
             </div>
         </div>
     <?php endforeach; ?>

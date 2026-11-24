@@ -1,11 +1,9 @@
 <?php
 
-require 'dados.php';
+$db = new DB();
 
-$data = [
-    'livros' => $livros
-];
+$livros = $db->livros();
 
 $view = 'home';
 
-view($view, $data);
+view($view, compact('livros'));
