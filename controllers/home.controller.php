@@ -2,8 +2,8 @@
 
 $db = new DB();
 
-$livros = $db->livros();
+$pesquisa = (isset($_REQUEST['pesquisa'])) ? $_REQUEST['pesquisa'] : '';
 
-$view = 'home';
+$livros = $db->livros($pesquisa);
 
-view($view, compact('livros'));
+view('home', compact('livros'));

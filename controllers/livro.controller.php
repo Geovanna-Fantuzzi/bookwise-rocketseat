@@ -1,15 +1,11 @@
 <?php 
 
-require 'dados.php';
+$db = new DB();
 
 $id = $_REQUEST['id'];
 
-$filtrado = array_filter($livros, fn($l) =>  $l['id'] == $id);
+$livro = $db->livro($id);
 
-$livro = array_pop($filtrado);
+// dd($livro);
 
-$view = 'livro';
-
-view($view, $livro);
-
-?>
+view('livro', compact('livro'));

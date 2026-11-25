@@ -1,4 +1,4 @@
-<h1 class="text-2xl mt-4"><?= $data['titulo'] ?></h1>
+<h1 class="text-2xl mt-4"><?= $livro->titulo; ?></h1>
 
 <section class="mt-4">
 
@@ -7,13 +7,13 @@
         <div class="flex">
 
             <div class="px-3">
-                <img src="<?= $data['imagem']; ?>" alt="Capa do livro <?= $data['titulo']; ?>">
+                <img src="<?= $livro->imagem; ?>" alt="Capa do livro <?= $livro->titulo; ?>">
             </div>
 
             <div class="space-y-1">
-                <div class="text-xs italic"><?= $data['autor'] ?></div>
+                <div class="text-xs italic"><?= $livro->autor; ?></div>
                 <div class="text-xs italic">⭐⭐⭐⭐⭐(3 Avaliações)</div>
-                <div class="text-sm mt-2"><?= $data['descricao'] ?></div>
+                <div class="text-sm mt-2"><?= $livro->descricao; ?></div>
             </div>
 
         </div>
