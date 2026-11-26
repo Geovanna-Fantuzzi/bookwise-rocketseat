@@ -12,41 +12,24 @@ class DB
 
     public function livros($pesquisa = '')
     {
-
-        $data = [];
-
         $sql = "select * from livros where titulo like :pesquisa";
         $sql = $this->db->prepare($sql);
         $sql->bindValue(':pesquisa', '%' . $pesquisa . '%');
+        $sql->setFetchMode(PDO::FETCH_CLASS, Livro::class); //Devolve um objeto em vez de array
         $sql->execute();
 
-        $items = $sql->fetchAll();
-
-        /*  Outra forma de se fazer o mesmo que o foreach:
-            return array_map(fn($item) => Livro::make($item), $items); 
-            No entanto, o foreach é muito mais legível.
-        */
-
-        foreach ($items as $item) {
-
-            $data[] = Livro::make($item);
-        }
-
-        return $data;
+        return $sql->fetchAll();
     }
 
     public function livro($id)
     {
-
         $sql = "select * from livros where id = :id";
 
         $sql = $this->db->prepare($sql);
         $sql->bindValue(':id', $id);
+        $sql->setFetchMode(PDO::FETCH_CLASS, Livro::class);
         $sql->execute();
-        $item = $sql->fetch();
 
-        $livro = Livro::make($item);
-
-        return $livro;
+        return $sql->fetch();
     }
 }
