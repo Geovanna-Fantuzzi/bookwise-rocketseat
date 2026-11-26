@@ -5,31 +5,48 @@ class DB
 
     private $db;
 
-    public function __construct()
+    public function __construct($config)
     {
-        $this->db = new PDO('sqlite:database.sqlite');
+        $conectionString = $config['driver'] . ':' . $config['database'];
+
+        $this->db = new PDO($conectionString);
     }
 
-    public function livros($pesquisa = '')
+    public function query($query, $class = null, $params = [])
     {
-        $sql = "select * from livros where titulo like :pesquisa";
-        $sql = $this->db->prepare($sql);
-        $sql->bindValue(':pesquisa', '%' . $pesquisa . '%');
-        $sql->setFetchMode(PDO::FETCH_CLASS, Livro::class); //Devolve um objeto em vez de array
-        $sql->execute();
+        $sql = $this->db->prepare($query);
 
-        return $sql->fetchAll();
+        if ($class) {
+            $sql->setFetchMode(PDO::FETCH_CLASS, $class);
+        }
+
+        $sql->execute($params);
+
+        return $sql;
     }
 
-    public function livro($id)
-    {
-        $sql = "select * from livros where id = :id";
+    // public function livros($pesquisa = '')
+    // {
+    //     $sql = "select * from livros where titulo like :pesquisa";
+    //     $sql = $this->db->prepare($sql);
+    //     $sql->bindValue(':pesquisa', '%' . $pesquisa . '%');
+    //     $sql->setFetchMode(PDO::FETCH_CLASS, Livro::class); //Devolve um objeto em vez de array
+    //     $sql->execute();
 
-        $sql = $this->db->prepare($sql);
-        $sql->bindValue(':id', $id);
-        $sql->setFetchMode(PDO::FETCH_CLASS, Livro::class);
-        $sql->execute();
+    //     return $sql->fetchAll();
+    // }
 
-        return $sql->fetch();
-    }
+    // public function livro($id)
+    // {
+    //     $sql = "select * from livros where id = :id";
+
+    //     $sql = $this->db->prepare($sql);
+    //     $sql->bindValue(':id', $id);
+    //     $sql->setFetchMode(PDO::FETCH_CLASS, Livro::class);
+    //     $sql->execute();
+
+    //     return $sql->fetch();
+    // }
 }
+
+$db = new DB($config['db']);
